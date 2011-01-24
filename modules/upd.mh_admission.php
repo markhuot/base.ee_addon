@@ -1,0 +1,102 @@
+<?php
+
+class Mh_admission_upd
+{
+	
+	var $module_name = 'Mh_admission';
+	var $version = '1.0';
+	
+	public function __construct() 
+	{
+		$this->EE =& get_instance();
+	}
+	
+	public function install()
+	{
+		// install module
+		$data = array(
+			'module_name' => $this->module_name,
+			'module_version' => $this->version,
+			'has_cp_backend' => 'y',
+			'has_publish_fields' => 'y'
+		);
+		
+		$this->EE->db->insert('modules', $data);
+		
+		
+		/*
+		// install actions
+		$data = array(
+			'class' => $this->module_name ,
+			'method' => 'method_to_call'
+		);
+		
+		$this->EE->db->insert('actions', $data);
+		*/
+		
+		
+		/*
+		// install publish page updates
+		$this->EE->load->library('layout');
+		$this->EE->layout->add_layout_tabs($this->tabs(), $this->module_name);
+		*/
+	}
+	
+	public function update($current = '')
+	{
+		if ($current == $this->version)
+		{
+			return FALSE;
+		}
+			
+		if ($current < 2.0) 
+		{
+			// Do your update code here
+		} 
+		
+		return TRUE; 
+	}
+	
+	public function uninstall()
+	{
+		// remove module
+		$this->EE->db->where('module_name', $this->module_name);
+		$this->EE->db->delete('modules');
+		
+		
+		/*
+		// remove actions
+		// remove module
+		$this->EE->db->where('class', $this->module_name);
+		$this->EE->db->delete('actions');
+		*/
+		
+		
+		/*
+		// remove publish page updates
+		$this->EE->load->library('layout');
+		$this->EE->layout->delete_layout_tabs($this->tabs(), 'module_name');
+		*/
+	}
+	
+	public function tabs()
+	{
+		$tabs[$this->module_name] = array(
+			/*'field_name_one'=> array(
+				'visible' => 'true',
+				'collapse' => 'false',
+				'htmlbuttons' => 'true',
+				'width' => '100%'
+				),
+			'field_name_two' => array(
+				'visible' => 'true',
+				'collapse' => 'false',
+				'htmlbuttons' => 'true',
+				'width' => '100%'
+				),*/
+			);
+		
+		return $tabs;
+	}
+	
+}
