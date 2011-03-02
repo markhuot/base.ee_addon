@@ -40,6 +40,8 @@ class Base_upd
 		$this->EE->load->library('layout');
 		$this->EE->layout->add_layout_tabs($this->tabs(), $this->module_name);
 		*/
+		
+		return TRUE;
 	}
 	
 	public function update($current = '')
@@ -73,6 +75,8 @@ class Base_upd
 		$this->EE->load->library('layout');
 		$this->EE->layout->delete_layout_tabs($this->tabs(), 'module_name');
 		*/
+		
+		return TRUE;
 	}
 	
 	public function tabs()
