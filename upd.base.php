@@ -87,14 +87,8 @@ class Base_upd
 				'collapse' => 'false',
 				'htmlbuttons' => 'true',
 				'width' => '100%'
-				),
-			'field_name_two' => array(
-				'visible' => 'true',
-				'collapse' => 'false',
-				'htmlbuttons' => 'true',
-				'width' => '100%'
-				),*/
-			);
+			)*/
+		);
 		
 		return $tabs;
 	}
