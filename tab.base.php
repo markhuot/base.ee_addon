@@ -25,7 +25,8 @@ class Base_tab
 			'field_pre_populate'   => 'n',
 			'field_text_direction' => 'ltr',
 			'field_type'           => 'text',
-			'field_maxl'           => 1024
+			'field_maxl'           => 1024,
+			'field_ta_rows'        => 6
 		);
 		
 		return $settings;
