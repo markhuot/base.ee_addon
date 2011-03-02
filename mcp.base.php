@@ -1,6 +1,6 @@
 <?php
 
-class Mh_admission_mcp {
+class Base_mcp {
 
 	function __construct()
 	{

@@ -1,10 +1,10 @@
 <?php
 
-class Mh_admission_upd
+class Base_upd
 {
 	
-	var $module_name = 'Mh_admission';
-	var $version = '1.0';
+	var $module_name = 'Base';
+	var $version = '1.0.0';
 	
 	public function __construct() 
 	{
@@ -63,14 +63,10 @@ class Mh_admission_upd
 		$this->EE->db->where('module_name', $this->module_name);
 		$this->EE->db->delete('modules');
 		
-		
-		/*
 		// remove actions
 		// remove module
 		$this->EE->db->where('class', $this->module_name);
 		$this->EE->db->delete('actions');
-		*/
-		
 		
 		/*
 		// remove publish page updates

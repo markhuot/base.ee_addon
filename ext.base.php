@@ -3,20 +3,25 @@
 class Mh_admission_ext
 {
 	
-	var $name = 'Admission, by Mark Huot';
-	var $version = '1.0.0';
-	var $description = 'Admission hooks for the login action.';
-	var $settings_exist = 'n';
-	var $docs_url = 'http://docs.markhuot.com/';
-	var $settings = array();
+	public $name = 'Base, by Mark Huot';
+	public $version = '1.0.0';
+	public $description = 'Base EE Add-On.';
+	public $settings_exist = 'n';
+	public $docs_url = 'http://docs.markhuot.com/';
+	public $settings = array();
 	
-	function __construct($settings='')
+	public function __construct($settings='')
 	{
 		$this->EE =& get_instance();
 		$this->settings = $settings;
 	}
 	
-	function activate_extension()
+	public function sessions_start()
+	{
+	
+	}
+	
+	public function activate_extension()
 	{
 		$this->settings = array(
 			/*'max_link_length'	=> 18,
@@ -28,17 +33,8 @@ class Mh_admission_ext
 		$hooks = array(
 			array(
 				'class'		=> __CLASS__,
-				'method'	=> 'member_member_register_start',
-				'hook'		=> 'member_member_register_start',
-				'settings'	=> serialize($this->settings),
-				'priority'	=> 10,
-				'version'	=> $this->version,
-				'enabled'	=> 'y'
-			),
-			array(
-				'class'		=> __CLASS__,
-				'method'	=> 'user_register_start',
-				'hook'		=> 'user_register_start',
+				'method'	=> 'sessions_start',
+				'hook'		=> 'sessions_start',
 				'settings'	=> serialize($this->settings),
 				'priority'	=> 10,
 				'version'	=> $this->version,
@@ -52,7 +48,7 @@ class Mh_admission_ext
 		}
 	}
 	
-	function update_extension($current = '')
+	public function update_extension($current = '')
 	{
 		if ($current == '' OR $current == $this->version)
 		{
@@ -68,7 +64,7 @@ class Mh_admission_ext
 		$this->EE->db->update('extensions', array('version' => $this->version));
 	}
 	
-	function disable_extension()
+	public function disable_extension()
 	{
 		$this->EE->db->where('class', __CLASS__);
 		$this->EE->db->delete('extensions');
