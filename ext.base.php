@@ -1,6 +1,6 @@
 <?php
 
-class Mh_admission_ext
+class Base_ext
 {
 	
 	public $name = 'Base, by Mark Huot';
