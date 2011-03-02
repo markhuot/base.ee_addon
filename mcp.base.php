@@ -2,8 +2,13 @@
 
 class Base_mcp {
 
-	function __construct()
+	public function __construct()
 	{
 		$this->EE =& get_instance();
+	}
+	
+	public function index()
+	{
+		return 'Hello World!';
 	}
 }
