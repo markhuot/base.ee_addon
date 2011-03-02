@@ -80,12 +80,12 @@ class Base_upd
 	public function tabs()
 	{
 		$tabs[$this->module_name] = array(
-			/*'field_name_one'=> array(
+			'unique_string_id'=> array(
 				'visible' => 'true',
 				'collapse' => 'false',
 				'htmlbuttons' => 'true',
 				'width' => '100%'
-			)*/
+			)
 		);
 		
 		return $tabs;
