@@ -70,11 +70,9 @@ class Base_upd
 		$this->EE->db->where('class', $this->module_name);
 		$this->EE->db->delete('actions');
 		
-		/*
 		// remove publish page updates
 		$this->EE->load->library('layout');
-		$this->EE->layout->delete_layout_tabs($this->tabs(), 'module_name');
-		*/
+		$this->EE->layout->delete_layout_tabs($this->tabs(), $this->module_name);
 		
 		return TRUE;
 	}
