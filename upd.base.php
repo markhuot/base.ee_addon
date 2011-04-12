@@ -44,6 +44,7 @@ class Base_upd
 		
 		/*
 		// create tables
+		$this->EE->load->dbforge();
 		$this->EE->dbforge->add_field("field_name varchar(100) NULL");
 		$this->EE->dbforge->add_key("id", TRUE);
 		$this->EE->dbforge->create_table('table_name');
