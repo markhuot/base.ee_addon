@@ -83,6 +83,9 @@ class Base_upd
 		$this->EE->load->library('layout');
 		$this->EE->layout->delete_layout_tabs($this->tabs(), $this->module_name);
 		
+		// drop tables
+		// $this->EE->dbforge->drop_table('table_name');
+		
 		return TRUE;
 	}
 	
