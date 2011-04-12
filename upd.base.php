@@ -41,6 +41,14 @@ class Base_upd
 		$this->EE->layout->add_layout_tabs($this->tabs(), $this->module_name);
 		*/
 		
+		
+		/*
+		// create tables
+		$this->EE->dbforge->add_field("field_name varchar(100) NULL");
+		$this->EE->dbforge->add_key("id", TRUE);
+		$this->EE->dbforge->create_table('table_name');
+		*/
+		
 		return TRUE;
 	}
 	
