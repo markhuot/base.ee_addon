@@ -9,6 +9,13 @@ class Base_ft extends EE_Fieldtype {
 	
 	public function display_field($data)
 	{
+		$this->EE->javascript->output('
+			if (console)
+			{
+				console.log("javascript!");
+			}
+		');
+		
 		return form_input(array(
 			'name'	=> $this->field_name,
 			'id'	=> $this->field_id,
@@ -52,8 +59,4 @@ class Base_ft extends EE_Fieldtype {
 		);
 	}
 	
-	function _cp_js()
-	{
-		
-	}
 }
