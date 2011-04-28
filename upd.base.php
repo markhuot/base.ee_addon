@@ -26,12 +26,17 @@ class Base_upd
 		
 		/*
 		// install actions
-		$data = array(
-			'class' => $this->module_name ,
-			'method' => 'method_to_call'
+		$actions = array(
+			array(
+				'class' => $this->module_name ,
+				'method' => 'method_to_call'
+			)
 		);
 		
-		$this->EE->db->insert('actions', $data);
+		foreach ($actions as $action)
+		{
+			$this->EE->db->insert('actions', $action);
+		}
 		*/
 		
 		
