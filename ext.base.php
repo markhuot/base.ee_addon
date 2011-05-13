@@ -30,21 +30,19 @@ class Base_ext
 		);
 		
 		
-		$hooks = array(
-			array(
+		foreach (array(
+			'sessions_start'
+		) as $hook)
+		{
+			$this->EE->db->insert('extensions', array(
 				'class'		=> __CLASS__,
-				'method'	=> 'sessions_start',
-				'hook'		=> 'sessions_start',
+				'method'	=> $hook,
+				'hook'		=> $hook,
 				'settings'	=> serialize($this->settings),
 				'priority'	=> 10,
 				'version'	=> $this->version,
 				'enabled'	=> 'y'
-			)
-		);
-		
-		foreach ($hooks as $hook)
-		{
-			$this->EE->db->insert('extensions', $hook);
+			));
 		}
 	}
 	
