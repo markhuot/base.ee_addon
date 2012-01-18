@@ -18,7 +18,7 @@ class Base_upd
 			'module_name' => $this->module_name,
 			'module_version' => $this->version,
 			'has_cp_backend' => 'y',
-			'has_publish_fields' => 'y'
+			'has_publish_fields' => 'n'
 		);
 		
 		$this->EE->db->insert('modules', $data);
